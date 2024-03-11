@@ -15,7 +15,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <title>Blog</title>
+    <title> <%= blog.title %></title>
   </head>
 
   <body>
@@ -53,6 +53,14 @@
         </ul>
       </nav>
     </header>
+
+    <script>
+      let menuToggle = document.querySelector(".menuToggle");
+      let header = document.querySelector("header");
+      menuToggle.onclick = function () {
+        header.classList.toggle("active");
+      };
+    </script>
 
     <main>
       <section>
@@ -93,85 +101,46 @@
         </div>
       </section>
     </main>
-    <!-- footerrrrrrr -->
-    <div class="footer">
-      <div class="d-flex flex-column h-100">
-        <!-- FOR DEMO PURPOSE 
-          <section class="hero text-white py-5 flex-grow-1">
-             <div class="container py-4">
-                 <div class="row">
-                     <div class="col-lg-6">
-                         <h1 class="display-4">Bootstrap footer bottom</h1>
-                         <p class="fst-italic text-muted">Using Bootstrap 5 flexbox utilities, create a footer that always sticks to the bottom of your viewport. Snippet by <a class="text-primary" href="https://bootstrapious.com/" target="_blank">Bootstrapious</a></p>
-                     </div>
-                 </div>
-             </div>
-         </section> 
-      -->
-
-        <!-- FOOTER -->
-        <footer class="w-100 py-4 flex-shrink-0 bg-dark">
-          <div class="container py-4">
-            <div class="row gy-4 gx-5">
-              <div class="col-lg-4 col-md-6">
-                <h5 class="h1 text-white">FB.</h5>
-                <p class="small text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt.
-                </p>
-                <p class="small text-muted mb-0">
-                  &copy; Copyrights. All rights reserved.
-                  <a class="text-primary" href="#">Bootstrapious.com</a>
-                </p>
-              </div>
-              <div class="col-lg-2 col-md-6">
-                <h5 class="text-white mb-3">Quick links</h5>
-                <ul class="list-unstyled text-muted">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Get started</a></li>
-                  <li><a href="#">FAQ</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-2 col-md-6">
-                <h5 class="text-white mb-3">Quick links</h5>
-                <ul class="list-unstyled text-muted">
-                  <li><a href="#" class="footer-links">Home</a></li>
-                  <li><a href="#" class="footer-links">About</a></li>
-                  <li><a href="#" class="footer-links">Get started</a></li>
-                  <li><a href="#" class="footer-links">FAQ</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <h5 class="text-white mb-3">Newsletter</h5>
-                <p class="small text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt.
-                </p>
-                <form action="#">
-                  <div class="input-group mb-3">
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="Recipient's username"
-                      aria-label="Recipient's username"
-                      aria-describedby="button-addon2"
-                    />
-                    <button
-                      class="btn btn-primary"
-                      id="button-addon2"
-                      type="button"
-                    >
-                      <i class="fas fa-paper-plane"></i>
-                    </button>
-                  </div>
-                </form>
-              </div>
+    <footer class="bg-dark py-4">
+      <div class="container text-white">
+        <div class="row gy-4 gx-5">
+          <div
+            class="col-lg-6 col-md-6 d-flex flex-column justify-content-between"
+          >
+            <div>
+              <h5 class="h1">DARUL HIKMAH</h5>
+              <p class="small">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt.
+              </p>
+            </div>
+            <div>
+              <p class="small mb-0">
+                &copy; Copyrights. All rights reserved. Developed by Glittle
+                Software Solutions
+              </p>
             </div>
           </div>
-        </footer>
+          <div class="col-lg-6 col-md-6">
+            <h5 class="text-white mb-3 text-center">Quick Links</h5>
+            <ul class="list-unstyled text-secondary d-flex flex-wrap">
+              <li class="mx-4 pt-3"><a href="/">Home</a></li>
+              <li class="mx-4 pt-3"><a href="/getUserBlogs">Read</a></li>
+              <li class="mx-4 pt-3"><a href="/getUserPosts">Posts</a></li>
+              <li class="mx-4 pt-3">
+                <a href="/getUserResourcePublications">Resources</a>
+              </li>
+              <li class="mx-4 pt-3"><a href="/getUserCourses">Courses</a></li>
+              <li class="mx-4 pt-3"><a href="/aboutUs">About</a></li>
+              <li class="mx-4 pt-3"><a href="/contactUs">Contact Us</a></li>
+              <li class="mx-4 pt-3">
+                <a href="/getUserPublications">Publications</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </footer>
     <script
       src="https://kit.fontawesome.com/85dc7f73ae.js"
       crossorigin="anonymous"

@@ -1,27 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Resorces</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--
-
-Template 2092 Shelf
-
-http://www.tooplate.com/view/2092-shelf
-
--->
-    <title><%= Resources.title %></title>
-
     <!-- load stylesheets -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"
-    />
     <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/static/Style/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/static/Style/bootstrap.min.css" /> -->
     <!-- Bootstrap style -->
     <link rel="stylesheet" href="/static/Style/tooplate-style.css" />
     <!-- Templatemo style -->
@@ -39,8 +27,8 @@ http://www.tooplate.com/view/2092-shelf
     />
   </head>
 
-  <body class="start-0">
-    <header class="top-0 start-0 ">
+  <body>
+    <header class="start-0 ">
       <a href="#" class="logo">DARUL HIKMAH</a>
       <div class="menuToggle"></div>
       <nav>
@@ -74,6 +62,7 @@ http://www.tooplate.com/view/2092-shelf
         </ul>
       </nav>
     </header>
+
     <script>
       let menuToggle = document.querySelector(".menuToggle");
       let header = document.querySelector("header");
@@ -81,63 +70,58 @@ http://www.tooplate.com/view/2092-shelf
         header.classList.toggle("active");
       };
     </script>
-    <div class="Container mb-xxl-5  ">
-      <div class="tm-main-content no-pad-b">
-        <section class="row tm-item-preview">
-          <div class="col-md-6 col-sm-12 mb-md-0 mb-5 d-flex justify-content-between">
-            <img
-            style="height: 40vh;"
-              class="img tm-img-center-sm"
-              src="data:image/png;base64, <%= Resources.image %>"
-              alt="Uploaded Image"
-            />
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <h2 class="tm-blue-text tm-margin-b-p"><%= Resources.title %></h2>
-            <p class="tm-margin-b-p description">
-              <%= Resources.description %>
-            </p>
 
-            <div href="#">
-              <% if(Resources.pdf.length> 100){ %>
-              <button>
-                <a
-                  class="download-button"
-                  href="/downloadB64/<%= Resources._id %>"
-                  download
-                  >Download %> PDF</a
-                >
-              </button>
-              <% }else{ %>
-              <button>
-                <a
-                  class="download-button"
-                  href="/downloadGFS/<%= Resources._id %>"
-                  download
-                  >Download %> PDF</a
-                >
-              </button>
-              <% } %>
+    <div class="container">
+      <div class="tm-main-content">
+        <section class="tm-margin-b-l">
+          <h2 class="heading">All resources</h2>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            possimus est debitis, dignissimos fuga laborum quam labore optio
+            sunt minima ab, doloremque neque illo laudantium illum voluptas
+            eveniet! Voluptatem, sunt.e. In tincidunt metus sed justo tincidunt
+            sollicitudin. Curabitur magna tellus, condimentum vitae consectetur
+            id, elementum sit amet erat.
+          </p>
+
+          <div class="tm-gallery">
+            <div class="row">
+              <% ResourcePublications.forEach(Publication=> { %> <%
+              if(Publication.category==="Resources"){ %>
+              <figure class="col-lg-3 col-md-4 col-sm-6 col-20 tm-gallery-item">
+                <a href="/getUserPublication/<%= Publication._id %>">
+                  <div class="tm-gallery-item-overlay">
+                    <img
+                      class="img-fluid tm-img-center"
+                      src="data:image/png;base64, <%= Publication.image %>"
+                      alt="Uploaded Image"
+                    />
+                  </div>
+                  <p class="tm-figcaption"><%= Publication.title %></p>
+                </a>
+              </figure>
+              <% }}); %>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
 
     <!-- load JS files -->
-    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <!-- <script src="/static/js/jquery-1.11.3.min.js"></script> -->
     <!-- jQuery (https://jquery.com/download/) -->
-    <script src="/static/js/popper.min.js"></script>
+    <!-- <script src="/static/js/popper.min.js"></script> -->
     <!-- Popper (https://popper.js.org/) -->
-    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- <script src="/static/js/bootstrap.min.js"></script> -->
     <!-- Bootstrap (https://getbootstrap.com/) -->
-    <script>
+    <!-- <script>
       $(document).ready(function () {
         // Update the current year in copyright
         $(".tm-current-year").text(new Date().getFullYear());
       });
-    </script>
-     <footer class=" bg-dark py-4">
+    </script> -->
+     <footer class=" bg-dark py-4 start-0 ">
       <div class="container text-white">
           <div class="row gy-4 gx-5">
               <div class="col-lg-6 col-md-6 d-flex flex-column justify-content-between">
