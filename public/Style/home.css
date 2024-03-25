@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-html{
-  height:100vh ;
+html {
+  height: 100vh;
 }
-body{
-  height:100vh ;
-
+body {
+  height: 100vh;
 }
 * {
   margin: 0;
@@ -190,25 +189,73 @@ a:focus {
   background: #212529;
 }
 
+/* CSS for Make Donations Section */
+.donations {
+  background-color: #f8f9fa; /* Light gray background */
+  display: flex;
+  flex-direction: row; /* Add padding to the top and bottom */
+}
+
+.donation-heading {
+  font-size: 2rem; /* Larger font size for the heading */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.donation-info {
+  font-size: 1.2rem; /* Font size for the contact information */
+  text-align: center; /* Center align the text */
+  margin-bottom: 20px; /* Add some space below the contact information */
+}
+
+.donation-contact {
+  font-size: 1.1rem; /* Font size for the contact details */
+  text-align: center; /* Center align the text */
+  margin-bottom: 30px; /* Add some space below the contact details */
+}
+
+.qr-code {
+  text-align: center; /* Center align the QR code image */
+}
+
+.qr-code img {
+  max-width: 300px; /* Limit the maximum width of the QR code */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the image is centered properly */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
 footer {
   background: #212529;
 }
 .footer {
   height: 100%;
 }
+
 @media (max-width: 768px) {
+  .donation-heading {
+    font-size: 1.5rem; /* Decrease font size for smaller screens */
+  }
+
+  .donation-info {
+    font-size: 1rem; /* Decrease font size for smaller screens */
+  }
+
+  .donation-contact {
+    font-size: 0.9rem; /* Decrease font size for smaller screens */
+  }
   footer.col-lg-6 {
-      flex: 0 0 100%;
-      max-width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
   footer.text-center {
-      text-align: center;
+    text-align: center;
   }
   footer.list-unstyled {
-      padding-left: 0;
-      list-style: none;
+    padding-left: 0;
+    list-style: none;
   }
   footer.list-unstyled li {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 }
