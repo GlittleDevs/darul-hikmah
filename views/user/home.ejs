@@ -7,51 +7,52 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    <link rel="stylesheet" href="/static/Style/blogs.css">
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+   <script
+      src="https://kit.fontawesome.com/85dc7f73ae.js"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
 
 </head>
 <body>
-    <header>
-      <div class="d-flex align-items-center justify-content-between">
-      <div>
-        <a href="#" class="logo">DARUL HIKMAH</a>
-      </div>
-        <div class="menuToggle">
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="">read <b>▼</b></a>
-                    <ul>
-                        <li><a href="/getUserBlogs">blog</a></li>
-                        <li><a href="/getUserInfographics">infographics</a></li>
-                    </ul>
-                </li>
-                <li><a href="/getUserPosts">posts</a></li>
-                <li><a href="/getUserResourcePublications">resources</a></li>
-                <li><a href="/getUserCourses">courses <b>▼</b></a>
-                    <ul>
-                        <li><a href="getUserKidCourses">for Women</a></li>
-                        <li><a href="getUserWomenCourses">for kids</a></li>
-                    </ul>
-                </li>
-                <li><a href="/aboutUs">about</a></li>
-                <li><a href="/contactUs">contact us</a></li>
-                <li><a href="/getuserPublications">publications<b>▼</b></a>
-                    <ul>
-                        <li><a href="/getUserEBookPublications">Ebooks</a></li>
-                        <li><a href="/getUserAcademyPublications">by academy</a></li>
-
-                    </ul>
-                </li>
-
-            </ul>
-          </div>
-        </div>
-        </nav>
-
-    </header>
+  <header>
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="#" class="logo"> <div class="heatit"> <div> DARUL HIKMAH ACADEMY</div> <div> <img src="/static/Assets/images/logo.png" alt=""> </div></div></a>
+     <div class="menuToggle">
+     <nav>
+       <ul>
+         <li><a href="/">Home</a></li>
+         <li>
+           <a href="">Read <b>▼</b></a>
+           <ul>
+             <li><a href="/getUserBlogs">Blog</a></li>
+             <li><a href="/getUserInfographics">Infographics</a></li>
+           </ul>
+         </li>
+         <li><a href="/getUserPosts">Posts</a></li>
+         <li><a href="/getUserResourcePublications">Resources</a></li>
+         <li>
+           <a href="/getUserCourses">Courses <b>▼</b></a>
+           <ul>
+             <li><a href="getUserKidCourses">for Kids</a></li>
+             <li><a href="getUserWomenCourses">for Women</a></li>
+           </ul>
+         </li>
+         <li><a href="/aboutUs">About</a></li>
+         <li><a href="/contactUs">Contact us</a></li>
+         <li>
+           <a href="/getuserPublications">Publications<b>▼</b></a>
+           <ul>
+             <li><a href="/getUserEBookPublications">Ebooks</a></li>
+             <li><a href="/getUserAcademyPublications">by Academy</a></li>
+           </ul>
+         </li>
+       </ul>
+     </nav>
+    </div>
+   </header>
     
     <script>let menuToggle = document.querySelector('.menuToggle');
         let header = document.querySelector('header');
@@ -62,7 +63,7 @@
 
                                        <!-- sliderrrrrrrrrrrrrr -->    
          
-                                       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                       <div id="carouselExampleIndicators" style="padding-top:100px ;" class="carousel slide" data-ride="carousel">
                                         <ol class="carousel-indicators">
                                           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -73,10 +74,10 @@
                                             <img class="d-block w-100" src="/static/Assets/images/model1.jpg" alt="First slide">
                                           </div>
                                           <div class="carousel-item">
-                                            <img class="d-block w-100" src="/static/Assets/images/model2.jpg" alt="Second slide">
+                                            <img class="d-block w-100" src="/static/Assets/images/model2.jpeg" alt="Second slide">
                                           </div>
                                           <div class="carousel-item">
-                                            <img class="d-block w-100" src="/static/Assets/images/model3.jpg" alt="Third slide">
+                                            <img class="d-block w-100" src="/static/Assets/images/model3.jpeg" alt="Third slide">
                                           </div>
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -89,28 +90,43 @@
                                         </a>
                                       </div>         
      
-     <h2 class="slogon1">THE PATH TOWARDS RIGHTEOUSNESS</h2>
+     <h2 class="slogon1">"The Journey to Success, Here and in the Hereafter"</h2>
+     <p class="slogan2">The path towards righteousness</p>
+     <div class="introvid">
+      <div>
+      <video controls autoplay width="600">
+        <source src="/static/Assets/introdh.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+     </div>
+     
+  
      <div class="main">
         <h2 class="courses">COURSES OFFERED FOR WOMEN</h2>
         <!-- <h2 class="courses-women">COURSES FOR WOMEN</h2> -->
         <ul class="cards">
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/aalimah.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/aalimah.jpeg"></div>
               <div class="card_content">
                 <h2 class="card_title">Aalimah Program </h2>
                 <p class="card_text">Traditional islamic learning online program for women</p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserWomenCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/tajweed.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/tajweed.jpeg"></div>
               <div class="card_content">
                 <h2 class="card_title">Tajweed of Quran</h2>
                 <p class="card_text">learn Tajweed of Quran In english and urdu in brief</p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserWomenCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
@@ -120,42 +136,52 @@
               <div class="card_content">
                 <h2 class="card_title">recitation correction</h2>
                 <p class="card_text">learn how to recite and pronounce words correctly with Tajweeed</p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserWomenCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/seerah.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/seerah.jpeg"></div>
               <div class="card_content">
                 <h2 class="card_title">Quran Seerat</h2>
                 <p class="card_text">learn Quran with seerat and explantion online</p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserWomenCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/lisan.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/lisan.jpeg"></div>
               <div class="card_content">
                 <h2 class="card_title">Lisan ul Quran</h2>
                 <p class="card_text">Learn quran orally with proper pronunciations </p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserWomenCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/hayat.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/hayat.jpeg"></div>
               <div class="card_content">
                 <h2 class="card_title">Hayat-e-Tayyaba</h2>
                 <p class="card_text">Islamic religiostic approach in every sphere of life</p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserWomenCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
         </ul>
-        <h2 class="redirector">For more courses <button class="learn">Learn More</button></h2>
+        
+        <h2 class="redirector">For more courses <a href="getUserWomenCourses" class="learn">Learn More</a></h2>
+
       </div>
     
      
@@ -165,68 +191,70 @@
         <ul class="cards">
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/nooraniyah.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/nooraniyah.jpeg"></div>
               <div class="card_content">
                 <h2 class="card_title">nooraniyah</h2>
                 <p class="card_text">learn Arabic and basic grammar from scratch</p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserKidCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/attributes.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/attributes.jpeg"></div>
               <div class="card_content">
                 <h2 class="card_title">Attributes of Allah</h2>
                 <p class="card_text">learn 99 names of Allah and Meanings of attributes</p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserKidCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/recitation.jpeg"></div>
+              <div class="card_image"><img src="/static/Assets/images/recitationk.jpeg"></div>
               <div class="card_content">
                 <h2 class="card_title">recitation correction</h2>
                 <p class="card_text">learn how to recite and pronounce words correctly with Tajweeed</p>
-                <button class="btn card_btn">Read More</button>
+                <a href="getUserKidCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/seerah.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/juzz.jpeg"></div>
               <div class="card_content">
-                <h2 class="card_title">Quran Seerat</h2>
-                <p class="card_text">learn Quran with seerat and explantion online</p>
-                <button class="btn card_btn">Read More</button>
+                <h2 class="card_title">Juzz 30 Recitation for Kids</h2>
+                <p class="card_text"> Introducing Children to Quranic Reading with Joy and Excellence
+                </p>
+                <a href="getUserKidCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
             </div>
           </li>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/lisan.jpg"></div>
+              <div class="card_image"><img src="/static/Assets/images/tahfeez.jpeg"></div>
               <div class="card_content">
-                <h2 class="card_title">Lisan ul Quran</h2>
-                <p class="card_text">Learn quran orally with proper pronunciations </p>
-                <button class="btn card_btn">Read More</button>
+                <h2 class="card_title">Tahfeez Juzz 30 for Kids</h2>
+                <p class="card_text"> Mastering Quranic Recitation, Understanding, and Memorization </p>
+                <a href="getUserKidCourses" class="btn-link">
+                  <button class="btn card_btn">Read More</button>
+                </a>
               </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="/static/Assets/images/hayat.jpg"></div>
-              <div class="card_content">
-                <h2 class="card_title">Hayat-e-Tayyaba</h2>
-                <p class="card_text">Islamic religiostic approach in every sphere of life</p>
-                <button class="btn card_btn">Read More</button>
-              </div>
-
             </div>
           </li>
         </ul>
+        
         <div style="display: wrap;">
-        <h2 class="redirector">For more courses <button class="learn">Learn More</button></h2>
+          <h2 class="redirector">For more courses <a href="getUserKidCourses" class="learn">Learn More</a></h2>
+
         </div>
     </div>
       </div>
@@ -240,35 +268,35 @@
       <div class="row">
         <div class="col">
           <div class="blog-card">
-            <img src="/static/Assets/images/blog1.jpg">
-            <h3 class="blog-title">Blog Post Title 1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vero perferendis 
-              fuga, nobis velit a, quos ex ipsum sed sunt in 
-              mollitia similique amet. Enim iure labore deserunt. Dolor, sint!</p>
-              <a href="" class="read-more">Read More</a>
+            <img src="/static/Assets/images/blog1.jpeg">
+            <h3 class="blog-title">Palestine: a brief history</h3>
+            <p>In the name of God, the Most Gracious, the Most Merciful.
+              Here's a summary of how we, as Muslims, can support our brothers and sisters in Palestine:
+              Pray sincerely: Make heartfelt prayers for the...</p>
+            <a href="/getUserBlogs" class="read-more">Read More</a>
           </div>
         </div>
         <div class="col">
           <div class="blog-card">
-            <img src="/static/Assets/images/blog2.jpg">
-            <h3 class="blog-title">Blog Post Title 2</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vero perferendis 
-              fuga, nobis velit a, quos ex ipsum sed sunt in 
-              mollitia similique amet. Enim iure labore deserunt. Dolor, sint!</p>
-              <a href="" class="read-more">Read More</a>
+            <img src="/static/Assets/images/blog2.jpeg">
+            <h3 class="blog-title">Importance of cleanliness and selfcare in islam</h3>
+            <p>Cleanliness and self-care hold significant importance in Islam, emphasizing both physical
+              and spiritual well-being. Here's a brief overview of their importance and practices within the faith...</p>
+            <a href="/getUserBlogs" class="read-more">Read More</a>
           </div>
         </div>
         <div class="col">
           <div class="blog-card">
-            <img src="/static/Assets/images/blog3.jpg">
-            <h3 class="blog-title">Blog Post Title 3</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vero perferendis 
-              fuga, nobis velit a, quos ex ipsum sed sunt in 
-              mollitia similique amet. Enim iure labore deserunt. Dolor, sint!</p>
-              <a href="" class="read-more">Read More</a>
+            <img src="/static/Assets/images/blog3.jpeg">
+            <h3 class="blog-title">The five pillars of islam</h3>
+            <p>The Five Pillars of Islam are foundational principles that form the basis of 
+              the faith and are mandatory for all Muslims. They include:
+              1. Shahadah (Declaration of Faith): Confessing....</p>
+            <a href="/getUserBlogs" class="read-more">Read More</a>
           </div>
         </div>
       </div>
+      
      </div>
      <section class="donations">
       <div class="container">
@@ -288,9 +316,21 @@
               <div class="col-lg-6 col-md-6 d-flex flex-column justify-content-between">
                   <div>
                       <h5 class="h1">DARUL HIKMAH</h5>
-                      <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                      <div class="icons">
+                        <a target="_blank" href="https://instagram.com/darulhikmahca?igshid=ODM2MWFjZDg="><div class="ig"><i class="fab fa-instagram fa-2xl"></i></div></a>
+                        <a target="_blank" href="https://youtube.com/@darulhikmahca"><div class="yt"><i class="fa-brands fa-youtube fa-2xl"></i></div></a>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100090197054000"><div class="fb"><i class="fa-brands fa-facebook fa-2xl"></i></div></a>
+                        <a target="_blank" href="https://whatsapp.com/channel/0029VaEV7GtKAwEnzdlNaU3f"><div class="wa"><i class="fa-brands fa-whatsapp fa-2xl"></i></div></a>
+                      </div>
+                  </div>
+                  <div class="small mt-2">
+                    <p>
+                      darulhikmahca@gmail.com
+                    </p>
+                    <p>Toronto, Canada</p>
                   </div>
                   <div>
+                    
                       <p class="small mb-0">&copy; Copyrights. All rights reserved. Developed by Glittle Software Solutions</p>
                   </div>
               </div>

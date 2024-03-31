@@ -29,7 +29,9 @@ router.get("/getUserInfographic/:id", userInfographicById);
 router.put(
   "/getInfographic/:id",
   isLoggedIn,
-  upload.array("images", 1),
+  upload.fields([
+    { name: "images", maxCount: 1 },
+  ]),
   updateInfographic
 );
 
@@ -38,7 +40,9 @@ router.get("/addInfographic", isLoggedIn, addInfographic);
 router.post(
   "/getInfographic",
   isLoggedIn,
-  upload.array("images", 1),
+  upload.fields([
+    { name: "images", maxCount: 1 },
+  ]),
   createInfographic
 );
 

@@ -126,7 +126,7 @@ const updatePublication = async (req, res, next) => {
 
     res.redirect("/getAdminPublication");
   } catch (error) {
-    return next(res.send(error));
+    next(error); // Pass the error to the error handling middleware
   }
 };
 
@@ -189,8 +189,8 @@ const createPublication = async (req, res, next) => {
 
       pdfWriteStream.end(pdfBuffer);
     }
-  } catch (error) {
-    return next(res.send(error));
+  }catch (error) {
+    next(error); // Pass the error to the error handling middleware
   }
 };
 
