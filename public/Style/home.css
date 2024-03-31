@@ -27,7 +27,7 @@ header {
   width: 100%;
   max-height: 80px;
   background-color: #0f2351;
-  padding: 0 100px;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,6 +45,27 @@ header ul li {
   position: relative;
   list-style: none;
   float: left;
+}
+div.introvid {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+div.introvid video{
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin: auto;
+  border-top: 1px solid #445964;
+  max-width: 100%;
+}
+div.heatit{
+  display: flex;
+}
+div.heatit div img{
+  padding-left: 5px;
+  height: 1.5em ;
+}
+div.heatit a img{
+  height: 1.5em ;
 }
 header ul li a {
   color: aliceblue;
@@ -160,12 +181,33 @@ header ul li ul li {
   }
 }
 
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Start slightly above its position */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0); /* Move to its original position */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px); /* Move slightly below its position */
+  }
+}
+
 .slogon1 {
   font-size: 40px;
   font-weight: 400;
   text-align: center;
-  /* margin-top: 200px; */
   margin-top: 50px;
+  animation: slideIn 5s linear infinite; /* Apply continuous animation */
+}
+
+.slogan2 {
+  text-align: center;
+  font-style: italic;
+  animation: slideIn 5s linear infinite; /* Apply continuous animation */
 }
 
 /* footerssssssss? */
@@ -223,6 +265,27 @@ a:focus {
   height: auto; /* Maintain aspect ratio */
   display: block; /* Ensure the image is centered properly */
   margin: 0 auto; /* Center the image horizontally */
+}
+#carouselExampleIndicators {
+  
+  width: 80vw; /* Set the carousel width to 90% of the viewport width */
+  margin: auto; /* Center the carousel horizontally */
+}
+
+.carousel-item img {
+  max-width: auto; /* Ensure the image doesn't exceed the carousel item width */
+  max-height: 100%; /* Set the maximum height for the images */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Ensure the image doesn't stretch */
+}
+
+.icons{
+  display: flex;
+  margin-top: 10px;
+}
+.icons a{
+  margin-right: 5px;
+  color:#546e7b;
 }
 
 footer {

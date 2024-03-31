@@ -146,6 +146,21 @@ header ul li ul li {
 
 /* Other
    * =============================== */
+.placeHolderimg{
+  height: auto;
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin: auto;
+
+}
+.pimg{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 
 main {
   margin-top: 30px;
@@ -186,7 +201,7 @@ section p {
   color: #252525;
   line-height: 25px;
   margin-bottom: 40px;
-  text-align: justify;
+  text-align: left;
 }
 section .intro {
   font-weight: 300;

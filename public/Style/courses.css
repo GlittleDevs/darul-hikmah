@@ -12,6 +12,7 @@
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 150px;
+  
   /* margin-left: -100px; */
 }
 
@@ -29,7 +30,7 @@
 img {
   height: auto;
   max-width: 100%;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   /* background-size: cover; */
   display: block;
   object-fit: cover;
@@ -95,7 +96,7 @@ img {
 
 .card_content {
   padding: 1rem;
-  background: linear-gradient(to bottom left, #ded0b6 40%, #ffc39e 100%);
+  background:linear-gradient(to right, #BF953F,  #B38728,  #AA771C);
 }
 
 .card_title {
