@@ -38,13 +38,17 @@ router.get("/getUserCourse/:id", userCourseById);
 router.put(
   "/getCourse/:id",
   isLoggedIn,
-  upload.array("image", 1),
+  upload.fields([
+    { name: "images", maxCount: 1 },
+  ]),
   updateCourse
 );
 
 router.get("/addCourse", isLoggedIn, addCourse);
 
-router.post("/getCourse", isLoggedIn, upload.array("image", 1), createCourse);
+router.post("/getCourse", isLoggedIn, upload.fields([
+  { name: "images", maxCount: 1 },
+]), createCourse);
 
 router.delete("/deleteCourse/:id", isLoggedIn, deleteCourse);
 

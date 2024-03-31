@@ -31,7 +31,6 @@ router.put(
   isLoggedIn,
   upload.fields([
     { name: "images", maxCount: 1 },
-    { name: "pdfs", maxCount: 1 },
   ]),
   updateBlog
 );
@@ -43,7 +42,6 @@ router.post(
   isLoggedIn,
   upload.fields([
     { name: "images", maxCount: 1 },
-    { name: "pdfs", maxCount: 1 },
   ]),
   createBlog
 );

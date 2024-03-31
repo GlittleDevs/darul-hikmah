@@ -66,9 +66,6 @@ app.use("/", postRoutes);
 const publicationRoutes = require("./routes/publicationRoutes");
 app.use("/", publicationRoutes);
 
-const resourceRoutes = require("./routes/resourceRoutes");
-app.use("/", resourceRoutes);
-
 const infographicRoutes = require("./routes/infographicRoutes");
 app.use("/", infographicRoutes);
 

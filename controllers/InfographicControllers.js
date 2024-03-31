@@ -19,11 +19,8 @@ const addInfographic = (req, res, next) => {
 
 const createInfographic = async (req, res, next) => {
   try {
-    if (!req.files || req.files.length === 0) {
-      return res.status(400).json({ error: "No files were uploaded." });
-    }
     const { title, description } = req.body;
-    const imageBuffer = req.files[0].buffer; // Assuming single file upload
+    const imageBuffer = req.files["images"][0].buffer; // Assuming single file upload
     const imageString = imageBuffer.toString("base64");
     const newInfographic = new InfographicModel({
       image: imageString,
@@ -44,70 +41,26 @@ const createInfographic = async (req, res, next) => {
   }
 };
 
-// const updateInfographic = async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
-//     const { title, description } = req.body;
-
-//     // Check if the required fields are present
-//     if (!title || !description) {
-//       return res
-//         .status(400)
-//         .json({ error: "Title and description are required fields." });
-//     }
-
-//     // Find the existing infographic by ID
-//     const existingInfographic = await InfographicModel.findById(id);
-
-//     // If the infographic is not found, return a 404 status
-//     if (!existingInfographic) {
-//       return res.status(404).json({ error: "Infographic not found." });
-//     }
-
-//     // Handle image update if a new file is uploaded
-//     if (req.files && req.files.length > 0) {
-//       const imageBuffer = req.files[0].buffer; // Assuming single file upload
-//       const imageString = imageBuffer.toString("base64");
-//       existingInfographic.image = imageString;
-//     }
-
-//     // Update the existing infographic with the new data
-//     existingInfographic.title = title;
-//     existingInfographic.description = description;
-
-//     // Save the updated infographic
-//     await existingInfographic.save();
-
-//     // Redirect or respond as needed
-//     res.redirect("/getAdminInfographic");
-//   } catch (error) {
-//     return next(res.send(error));
-//   }
-// };
 
 const updateInfographic = async (req, res, next) => {
   try {
-    const infographicId = req.params.id;
+    const { id } = req.params;
     const { title, description } = req.body;
+    const updateInfographic = { title,  description};
     // Assuming you want to update only the image
-    if (!req.files || req.files.length === 0) {
-      return res.status(400).json({ error: "No files were uploaded." });
+    if (req.files["images"] && req.files["images"][0]) {
+      const imageFile = req.files["images"][0];
+      updateInfographic.image = imageFile.buffer.toString("base64");
     }
-
-    const updatedImageBuffer = req.files[0].buffer; // Assuming single file upload
-    const updatedImageString = updatedImageBuffer.toString("base64");
-
     // Find the post by ID
-    const infographicToUpdate = await InfographicModel.findById(infographicId);
+    const infographicToUpdate = await InfographicModel.findByIdAndUpdate(id,updateInfographic,{
+      runValidators: true,
+      new: true,
+    });
 
     if (!infographicToUpdate) {
       return res.status(404).json({ error: "Infographic not found." });
     }
-
-    // Update the image field
-    infographicToUpdate.image = updatedImageString;
-    infographicToUpdate.title = title;
-    infographicToUpdate.description = description;
 
     // Save the updated post
     await infographicToUpdate.save();

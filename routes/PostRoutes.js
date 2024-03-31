@@ -26,11 +26,15 @@ router.get("/editAdminPost/:id", isLoggedIn, editPost);
 
 router.get("/getUserPost/:id", userPostById);
 
-router.put("/getPost/:id", isLoggedIn, upload.array("images", 1), updatePost);
+router.put("/getPost/:id", isLoggedIn, upload.fields([
+  { name: "images", maxCount: 1 },
+]), updatePost);
 
 router.get("/addPost", isLoggedIn, addPost);
 
-router.post("/getPost", isLoggedIn, upload.array("images", 1), createPost);
+router.post("/getPost", isLoggedIn, upload.fields([
+  { name: "images", maxCount: 1 },
+]), createPost);
 
 router.delete("/deletePost/:id", isLoggedIn, deletePost);
 

@@ -5,7 +5,7 @@ const isLoggedIn = (req, res, next) => {
   const token = req.cookies.token;
 
   if (!token) {
-    return res.redirect('/login'); // Redirect to login page if no token
+    return res.redirect('/Darul_Hikmah_Academy_AdminLogin'); // Redirect to login page if no token
   }
 
   try {
@@ -14,7 +14,7 @@ const isLoggedIn = (req, res, next) => {
     next();
   } catch (error) {
     console.error(error);
-    return res.redirect('/login'); // Redirect to login page for invalid token
+    return res.redirect('/Darul_Hikmah_Academy_AdminLogin'); // Redirect to login page for invalid token
   }
 };
 

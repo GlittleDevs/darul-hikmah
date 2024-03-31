@@ -21,14 +21,7 @@ const addCourse = (req, res, next) => {
 const createCourse = async (req, res, next) => {
   try {
     const { title, link, category, description } = req.body;
-    const imageFile = req.file; // Assuming you have configured file upload middleware
-
-    // Validate required fields
-    if (!title || !link || !category || !description) {
-      return res.status(400).send("All fields are required");
-    }
-
-    const imageBuffer = req.files[0].buffer; // Assuming single file upload
+    const imageBuffer = req.files["images"][0].buffer; // Assuming single file upload
     const imageString = imageBuffer.toString("base64");
 
     // Create a new course
@@ -52,34 +45,22 @@ const updateCourse = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { title, link, category, description } = req.body;
+    const updateCourse = { title, link, category, description }
 
-    if (!title || !description || !link || !category) {
-      return res
-        .status(400)
-        .json({ error: "Validation error, required fields." });
+    if (req.files["images"] && req.files["images"][0]) {
+      const imageFile = req.files["images"][0];
+      updateCourse.image = imageFile.buffer.toString("base64");
     }
 
-    if (!req.files || req.files.length === 0) {
-      return res.status(400).json({ error: "No files were uploaded." });
-    }
 
-    const imageBuffer = req.files[0].buffer; // Assuming single file upload
-    const imageString = imageBuffer.toString("base64");
-
-    const existingCourse = await CourseModel.findById(id);
+    const existingCourse = await CourseModel.findByIdAndUpdate(id,updateCourse,{
+      runValidators: true,
+      new: true,
+    });
 
     if (!existingCourse) {
       return res.status(404).json({ error: "Course not found." });
     }
-
-    // Handle image update if a new file is uploaded
-
-    // Update the existing course with the new data
-    existingCourse.title = title;
-    existingCourse.description = description;
-    existingCourse.image = imageString;
-    existingCourse.category = category;
-    existingCourse.link = link;
 
     // Save the updated course
     await existingCourse.save();

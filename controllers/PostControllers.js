@@ -20,11 +20,8 @@ const addPost = (req, res, next) => {
 
 const createPost = async (req, res, next) => {
   try {
-    if (!req.files || req.files.length === 0) {
-      return res.status(400).json({ error: "No files were uploaded." });
-    }
     const { title, description } = req.body;
-    const imageBuffer = req.files[0].buffer; // Assuming single file upload
+    const imageBuffer = req.files["images"][0].buffer; // Assuming single file upload
     const imageString = imageBuffer.toString("base64");
     const newPost = new postModel({
       image: imageString,
@@ -47,26 +44,22 @@ const createPost = async (req, res, next) => {
 
 const updatePost = async (req, res, next) => {
   try {
-    const postId = req.params.id;
-
+    const { id } = req.params;
+    const { title, description } = req.body;
+    const updatePost = { title,  description};
     // Assuming you want to update only the image
-    if (!req.files || req.files.length === 0) {
-      return res.status(400).json({ error: "No files were uploaded." });
+    if (req.files["images"] && req.files["images"][0]) {
+      const imageFile = req.files["images"][0];
+      updatePost.image = imageFile.buffer.toString("base64");
     }
-
-    const updatedImageBuffer = req.files[0].buffer; // Assuming single file upload
-    const updatedImageString = updatedImageBuffer.toString("base64");
-
     // Find the post by ID
-    const postToUpdate = await postModel.findById(postId);
-
+    const postToUpdate = await postModel.findByIdAndUpdate(id,updatePost,{
+      runValidators: true,
+      new: true,
+    });
     if (!postToUpdate) {
       return res.status(404).json({ error: "Post not found." });
     }
-
-    // Update the image field
-    postToUpdate.image = updatedImageString;
-
     // Save the updated post
     await postToUpdate.save();
 
