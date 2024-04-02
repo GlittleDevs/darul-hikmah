@@ -114,6 +114,9 @@ header ul li ul li {
     width: 100vw;
     background-color: #546e7b;
   }
+  div.heatit{
+    font-size: 10px;
+  }
   header ul li a:hover {
     background-color: #1e4988;
   }
