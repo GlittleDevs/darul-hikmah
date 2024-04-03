@@ -34,7 +34,9 @@ footer {
 
   padding-right: 2rem;
 }
-
+.brochures{
+  display: none;
+}
 .par2 {
   line-height: 30px;
   padding: 2%;
@@ -106,8 +108,18 @@ div.par3 {
   .slog {
     margin-top: 1rem;
     color: rgb(252, 252, 227);
+    font-size: 12px;
+  }
+  .brochure{
+    display: none;
   }
 
+  .brochures{
+    color: black;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+  }
   div.abtcon1,
   div.abtcont2 {
     margin-top: 3rem;
