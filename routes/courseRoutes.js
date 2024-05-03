@@ -39,7 +39,7 @@ router.put(
   "/getCourse/:id",
   isLoggedIn,
   upload.fields([
-    { name: "image", maxCount: 1 },
+    { name: "images", maxCount: 1 },
   ]),
   updateCourse
 );
@@ -47,7 +47,7 @@ router.put(
 router.get("/addCourse", isLoggedIn, addCourse);
 
 router.post("/getCourse", isLoggedIn, upload.fields([
-  { name: "image", maxCount: 1 },
+  { name: "images", maxCount: 1 },
 ]), createCourse);
 
 router.delete("/deleteCourse/:id", isLoggedIn, deleteCourse);
